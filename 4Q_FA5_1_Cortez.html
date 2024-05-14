@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
-<script>
-let userInput;
-do {
-    userInput = prompt("Please enter a number:");
-} while (isNaN(userInput) || userInput === "");
+    <script>
+        let userInput;
+        do {
+            userInput = prompt("Please enter a number:");
+        } while (isNaN(userInput) || userInput === "");
 
-const number = parseInt(userInput);
+        const number = parseInt(userInput);
 
-document.write('<p>Number inputted: ${number}</p>');
+        document.write(`<p>Number inputted: ${number}</p>`);
 
-if (number % 2 === 0) {
-    for (let a = number; a > 0; a--) {
-        for (let b = a; b > 0; b--) {
-            document.write(`${i} `);
+        if (number % 2 === 1) {
+            for (let a = number; a > 0; a--) {
+                for (let b = 0; b < number; b++) {
+                    document.write(`${a} `);
+                }
+                document.write("<br>");
+            }
+        } else {
+            let count = 1;
+            for (let a = number; a > 0; a--) {
+                for (let b = 0; b < a; b++) {
+                    document.write(`${count} `);
+                }
+                count++;
+                document.write("<br>");
+            }
         }
-        document.write("<br>");
-    }
-} else {
-    for (let a = number; a > 0; a--) {
-        for (let b = number; b > 0; b--) {
-            document.write(`${a} `);
-        }
-        document.write("<br>");
-    }
-}
-</script>
+    </script>
 </body>
 </html>
-
